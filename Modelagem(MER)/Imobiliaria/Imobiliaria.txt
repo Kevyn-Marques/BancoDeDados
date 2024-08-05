@@ -1,0 +1,97 @@
+CREATE TABLE endreco (
+id_endereco int(11) PRIMARY KEY auto_increment,
+cidade varchar(55),
+estado varchar(55),
+rua varchar(55),
+bairro varchar,
+numero int(11),
+cep varchar(55)
+)
+
+CREATE TABLE proprietario (
+cpf varchar(55),
+telefone varchar(255),
+nome varchar(255),
+id_proprietario int(11) PRIMARY KEY,
+data_nasc date,
+email varchar(255),
+rg varchar(55),
+id_endereco int(11),
+FOREIGN KEY(id_endereco) REFERENCES endreco (id_endereco)
+)
+
+CREATE TABLE fiador (
+id_fiador int(11) PRIMARY KEY,
+nome varchar,
+telefone varchar(55),
+email varchar(55),
+cpf varchar(55),
+rg varchar(55),
+id_endereco int(11),
+FOREIGN KEY(id_endereco) REFERENCES endreco (id_endereco)
+)
+
+CREATE TABLE corretor (
+cpf varchar(55),
+data_nasc date,
+imobiliaria varchar(55),
+rg varchar(55),
+email varchar(255),
+telefone varchar(55),
+nome varchar(255),
+id_corretor int(11) PRIMARY KEY
+)
+
+CREATE TABLE contrato (
+id_contrato int(11) PRIMARY KEY,
+preco_m decimal(10,2),
+vencimento date,
+data_inic date,
+data_fim Texto(1),
+condicoes varchar(55),
+descricao varchar(255),
+id_imovel int(11),
+id_corretor int(11),
+id_inquilino Texto(1)
+)
+
+CREATE TABLE inquilino (
+nome varchar(255),
+telefone varchar(55),
+rg varchar(55),
+cpf varchar(55),
+id_inquilino Texto(1) PRIMARY KEY,
+email varchar(255),
+id_fiador int(11),
+id_corretor int(11)
+)
+
+CREATE TABLE imovel (
+id_imovel int(11) PRIMARY KEY,
+quartos int(11),
+tamanho_m2 int(11),
+comodos int(11),
+quintal int(11),
+banheiros int(11),
+andares int(11),
+garagem bit,
+piscina bit,
+alugado bit,
+id_proprietario int(11),
+id_endereco int(11),
+FOREIGN KEY(id_endereco) REFERENCES endreco (id_endereco)
+)
+
+CREATE TABLE fotos (
+id_fotos int(11) PRIMARY KEY,
+medias varchar(255),
+id_imovel int(11),
+FOREIGN KEY(id_imovel) REFERENCES imovel (id_imovel)
+)
+
+ALTER TABLE contrato ADD FOREIGN KEY(id_imovel) REFERENCES imovel (id_imovel)
+ALTER TABLE contrato ADD FOREIGN KEY(id_corretor) REFERENCES corretor (id_corretor)
+ALTER TABLE contrato ADD FOREIGN KEY(id_inquilino) REFERENCES inquilino (id_inquilino)
+ALTER TABLE inquilino ADD FOREIGN KEY(id_fiador) REFERENCES fiador (id_fiador)
+ALTER TABLE inquilino ADD FOREIGN KEY(id_corretor) REFERENCES corretor (id_corretor)
+ALTER TABLE imovel ADD FOREIGN KEY(id_proprietario) REFERENCES proprietario (id_proprietario)
