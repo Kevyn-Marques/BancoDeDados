@@ -10,11 +10,11 @@ cep varchar(55)
 
 CREATE TABLE proprietario (
 id_proprietario int(11) PRIMARY KEY auto_increment,
-cpf varchar(55),
+cpf varchar(55) unique,
 telefone varchar(255),
 nome varchar(255),
 data_nasc date,
-email varchar(255),
+email varchar(255) unique,
 rg varchar(55),
 id_endereco int(11),
 FOREIGN KEY(id_endereco) REFERENCES endreco (id_endereco)
@@ -24,7 +24,7 @@ CREATE TABLE fiador (
 id_fiador int(11) PRIMARY KEY auto_increment,
 nome varchar,
 telefone varchar(55),
-email varchar(55),
+email varchar(55) unique,
 cpf varchar(55),
 rg varchar(55),
 id_endereco int(11),
