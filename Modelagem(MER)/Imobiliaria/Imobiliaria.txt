@@ -59,6 +59,13 @@ FOREIGN KEY(id_endereco) REFERENCES endreco (id_endereco)
 FOREIGN KEY (id_prprietario) REFERENCES proprietario (id_proprietario)
 );
 
+CREATE TABLE fotos (
+id_fotos int(11) PRIMARY KEY,
+medias varchar(255),
+id_imovel int(11),
+FOREIGN KEY(id_imovel) REFERENCES imovel (id_imovel)
+);
+
 CREATE TABLE inquilino (
 nome varchar(255),
 telefone varchar(55),
@@ -70,13 +77,6 @@ id_fiador int(11),
 id_corretor int(11)
 FOREIGN KEY (id_fiador) REFERENCES fiador (id_fiador)
 FOREIGN KEY (id_corretor) REFERENCES corretor(id_corretor)
-);
-
-CREATE TABLE fotos (
-id_fotos int(11) PRIMARY KEY,
-medias varchar(255),
-id_imovel int(11),
-FOREIGN KEY(id_imovel) REFERENCES imovel (id_imovel)
 );
 
 CREATE TABLE contrato (
