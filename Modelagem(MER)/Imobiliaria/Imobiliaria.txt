@@ -68,7 +68,9 @@ id_inquilino Texto(1) PRIMARY KEY,
 email varchar(255),
 id_fiador int(11),
 id_corretor int(11)
-)
+FOREIGN KEY (id_fiador) REFERENCES fiador (id_fiador)
+FOREIGN KEY (id_corretor) REFERENCES corretor(id_corretor)
+);
 
 CREATE TABLE fotos (
 id_fotos int(11) PRIMARY KEY,
@@ -88,11 +90,7 @@ descricao varchar(255),
 id_imovel int(11),
 id_corretor int(11),
 id_inquilino Texto(1)
+FOREIGN KEY(id_imovel) REFERENCES imovel (id_imovel)
+FOREIGN KEY(id_corretor) REFERENCES corretor (id_corretor)
+FOREIGN KEY(id_inquilino) REFERENCES inquilino (id_inquilino)
 );
-
-ALTER TABLE contrato ADD FOREIGN KEY(id_imovel) REFERENCES imovel (id_imovel)
-ALTER TABLE contrato ADD FOREIGN KEY(id_corretor) REFERENCES corretor (id_corretor)
-ALTER TABLE contrato ADD FOREIGN KEY(id_inquilino) REFERENCES inquilino (id_inquilino)
-ALTER TABLE inquilino ADD FOREIGN KEY(id_fiador) REFERENCES fiador (id_fiador)
-ALTER TABLE inquilino ADD FOREIGN KEY(id_corretor) REFERENCES corretor (id_corretor)
-ALTER TABLE imovel ADD FOREIGN KEY(id_proprietario) REFERENCES proprietario (id_proprietario)
