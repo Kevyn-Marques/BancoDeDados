@@ -1,19 +1,20 @@
 CREATE TABLE endreco (
 id_endereco int(11) PRIMARY KEY auto_increment,
-cidade varchar(55),
-estado varchar(55),
-rua varchar(55),
-bairro varchar,
-numero int(11),
-cep varchar(55)
-)
+cidade varchar(55) not null,
+estado varchar(55) not null,
+rua varchar(55) not null,
+bairro varchar(255) not null,
+numero int(11) not null,
+cep varchar(55) not null,
+complemento varchar(255)
+);
 
 CREATE TABLE proprietario (
 id_proprietario int(11) PRIMARY KEY auto_increment,
-cpf varchar(55) unique,
+cpf varchar(55)  not null unique,
 telefone varchar(255),
 nome varchar(255),
-data_nasc date,
+data_nasc date not null,
 email varchar(255) unique,
 rg varchar(55),
 id_endereco int(11),
@@ -24,7 +25,7 @@ CREATE TABLE fiador (
 id_fiador int(11) PRIMARY KEY auto_increment,
 nome varchar,
 telefone varchar(55),
-email varchar(55) unique,
+email varchar(55) not null unique,
 cpf varchar(55),
 rg varchar(55),
 id_endereco int(11),
@@ -40,6 +41,8 @@ rg varchar(55),
 email varchar(255),
 telefone varchar(55),
 nome varchar(255)
+id_endereco int(11),
+FOREIGN KEY (id_endereco) REFERENCES endereco (id_endereco)
 );
 
 CREATE TABLE imovel (
