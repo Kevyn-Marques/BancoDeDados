@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Ago-2024 às 14:02
+-- Tempo de geração: 26-Ago-2024 às 13:45
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.0.25
 
@@ -109,6 +109,22 @@ CREATE TABLE `fiador` (
   `id_endereco` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Extraindo dados da tabela `fiador`
+--
+
+INSERT INTO `fiador` (`id_fiador`, `nome`, `telefone`, `email`, `cpf`, `rg`, `id_endereco`) VALUES
+(1, 'Alcino', '3456-8787', 'alcas@gmail.com', '166.994.453-11', '094568-9', 1),
+(2, 'Cesinha Rodrigues', '7364-8787', 'csinhamandamt@gmail.com', '112.333.443-11', '43828-9', 2),
+(3, 'Manuel', '9999-8787', 'manual@gmail.com', '145.674.923-11', '0434548-9', 3),
+(4, 'Marcos', '9876-8787', 'marcos@gmail.com', '187.300.923-11', '0344343-9', 4),
+(5, 'Lourenzo', '121345-8787', 'lourenzo@gmail.com', '009.314.923-11', '043443-9', 5),
+(6, 'Uesley', '99876-6475', 'ueslis@gmail.com', '117.111.113-11', '034458-9', 6),
+(7, 'Sinval Lawas', '99876-8888', 'sinvas@gmail.com', '199.555.673-11', '845875-9', 7),
+(8, 'Sinbad', '99876-7382', 'reileao@gmail.com', '111.354.944-11', '12345657-9', 8),
+(9, 'Mohamed', '99876-2773', 'mohamas@gmail.com', '.354.923-11', '078487-9', 9),
+(10, 'Mount', '99876-3543', 'mountresolis@gmail.com', '887.964.763-11', '0637293-9', 10);
+
 -- --------------------------------------------------------
 
 --
@@ -183,7 +199,14 @@ CREATE TABLE `proprietario` (
 INSERT INTO `proprietario` (`id_proprietario`, `cpf`, `telefone`, `nome`, `data_nasc`, `email`, `rg`, `id_endereco`) VALUES
 (1, '123.456.789-00', '(11) 98765-4321', 'Ana Silva', '1985-03-05', 'ana.silva@example.com', '12.345.678-9', 1),
 (2, '234.567.890-11', '(21) 97654-3210', ' João Santos', '1997-11-01', ' joao.santos@example.com', '23.456.789-0', 2),
-(3, '345.678.901-22', '(31) 96543-2109', ' Maria Oliveira', '2000-05-02', 'maria.oliveira@example.com', '34.567.890-1', 3);
+(3, '345.678.901-22', '(31) 96543-2109', ' Maria Oliveira', '2000-05-02', 'maria.oliveira@example.com', '34.567.890-1', 3),
+(4, '187.354.923-11', '99876-8787', 'Roberto Variados', '2005-07-02', 'robertovarios@gmail.com', '090828-9', 4),
+(5, '117.886.4563-12', '99856-6787', 'Renato Aragão', '1995-05-02', 'aragao@gmail.com', '093332-1', 5),
+(6, '237.676.773-13', '99567-1287', 'Claudio Preres Araújo', '1987-12-12', 'claaaaudio@gmail.com', '090828-5', 6),
+(7, '345.346.563-14', '97776-5687', 'Luan Varins', '2000-01-01', 'luansin@gmail.com', '01243-6', 7),
+(8, '675.376.903-15', '98236-5587', 'Drauzio Varela', '2003-03-02', 'varela@gmail.com', '563767-3', 8),
+(9, '995.976.563-16', '91116-3787', 'Orácio Sonidos', '2006-11-02', 'oracio@gmail.com', '034647-2', 9),
+(10, '457.856.231-17', '93456-1287', 'Césio Toxin', '2001-11-11', 'cesio137@gmail.com', '123456-0', 10);
 
 --
 -- Índices para tabelas despejadas
@@ -282,7 +305,7 @@ ALTER TABLE `endreco`
 -- AUTO_INCREMENT de tabela `fiador`
 --
 ALTER TABLE `fiador`
-  MODIFY `id_fiador` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_fiador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `imovel`
@@ -300,7 +323,7 @@ ALTER TABLE `inquilino`
 -- AUTO_INCREMENT de tabela `proprietario`
 --
 ALTER TABLE `proprietario`
-  MODIFY `id_proprietario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_proprietario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restrições para despejos de tabelas
