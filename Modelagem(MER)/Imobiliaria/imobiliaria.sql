@@ -59,7 +59,20 @@ CREATE TABLE `corretor` (
   `nome` varchar(255) DEFAULT NULL,
   `id_endereco` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
+--
+--Extraindo Dados da Tabela `corretor`
+--
+Insert Into `corretor` (`id_corretor`,`cpf`,`data_nasc`,`imobiliaria`,`rg`,`email`,`telefone`,`nome`,`id_endereco`) Values
+(1, '123.456.789-01', '1999-05-05', 'Casas Arnaldo', '09739-7', 'ruan@gmail.com','3333-0505','Ruan Aroldo', 1),
+(2, '234.111.444-99', '1577-12-12', 'Loteamento Vicente&filhos', '1111-1', 'tabata@gmail.com','1234-7777','Tabata Sanchez',2),
+(3, '777.777.777-77', '2000-05-02', 'Anapurna Imóveis', '99787-71', 'aluisio@gmail.com','4546-7777','Aluisio', 3),
+(4, '181.190.673-42', '1987-05-08', 'AutoImoveis', '70000-1', 'volkswagen@gmail.com','2783-7878','Clovis', 4),
+(5, '111.111.111-11', '1890-09-02', 'Imobiliaria Fachada', '79272-2', 'thomas@gmail.com','9999-8888','Thomas Carvalho', 5),
+(6, '987.654.321-00', '1980-07-06', 'Faminto Móveis', '384728-2', 'andersin@gmail.com','4626-7383','Anderson', 6),
+(7, '555.555.555-70', '1999-01-01', 'Imobilicimos', '204838-2', 'lulaby@gmail.com','6373-7288','Umberto', 7),
+(8, '999.888.777-66', '1800-08-08', 'Imóveis e Lanches', '038493-7', 'sinners@yahoo.com','2728-999','Joel', 8),
+(9, '111.222.333-44', '2006-07-07', 'Claudio Apartamentos', '2847283-2', 'colunga@gmail.com','5555-6666','Fernando Colunga',9),
+(10, '444.555.666-77', '2003-05-05', 'Cazemiro Imobiliária ', '928383-3', 'vasconselhos@gmail.com','8888-1111','Tamirez Vasconselos',10);
 -- --------------------------------------------------------
 
 --
