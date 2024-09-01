@@ -170,7 +170,20 @@ CREATE TABLE `imovel` (
   `id_proprietario` int(11) DEFAULT NULL,
   `id_endereco` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
+--
+-- Extraindo dados da tabela `imovel`
+--
+Insert into `imovel` (`id_imovel`,`quartos`,`tamanho_m2`,`comodos`,`quintal`,`banheiros`,`andares`,`garagem`,`piscina`,`alugado`,`id_proprietario`,`id_endereco`) Values
+  (1,2,42,5,1,2,2,b'1',b'0',b'0',1,2),
+  (2,3,50,2,1,3,2,b'0',b'0',b'0',2,3),
+  (3,4,64,4,1,4,2,b'1',b'0',b'0',3,1),
+  (4,1,30,3,1,1,1,b'1',b'0',b'0',4,4),
+  (5,4,60,6,1,4,2,b'0',b'0',b'0',5,5),
+  (6,5,72,3,2,5,2,b'1',b'1',b'0',6,6),
+  (7,3,53,8,1,3,2,b'1',b'0',b'0',7,7),
+  (8,2,39,2,1,2,1,b'0',b'0',b'0',8,8),
+  (9,4,56,4,1,4,2,b'1',b'0',b'0',9,9),
+  (10,2,45,7,1,1,2,b'1',b'0',b'0',10,10);
 -- --------------------------------------------------------
 
 --
