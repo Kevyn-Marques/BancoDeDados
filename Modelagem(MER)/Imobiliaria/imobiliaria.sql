@@ -203,7 +203,17 @@ CREATE TABLE `inquilino` (
 --
 -- Extraindo dados da tabela `inquilino`
 --
-Insert into `inquilino`
+Insert into `inquilino` (`id_inquilino`,`nome`,`telefone`,`rg`,`cpf`,`email`,`id_fiador`,`id_corretor`) values
+  (1,'Leandro Paiva','9786-9955','72489-9','512.789.001-36','leandrissimo@gmail.com',1,1),
+  (2,'Mauro','9945-9355','79389-9','103.559.501-56','mauro@gmail.com',2,2),
+  (3,'Vladimir','9786-9965','284889-6','112.098.001-70','vlad@gmail.com',3,3),
+  (4,'Cocielo','9786-6755','3874-9','109.111.001-76','julio@gmail.com',4,4),
+  (5,'Pedro','9786-9911','10399-0','209.779.183-39','pedrin@gmail.com',5,5),
+  (6,'Taylor Swift','1786-9055','9999-9','109.672.111-16','swifter@gmail.com',6,6),
+  (7,'Terencio','1286-9015','124949-3','189.478.384-96','terents@gmail.com',7,7),
+  (8,'Laura','8386-9785','72048-5','108.294.001-06','laurinha@gmail.com',8,8),
+  (9,'Agustinho Carrara','9716-1955','124020-0','538.297.201-00','grandefamilis@gmail.com',9,9),
+  (10,'Marco Tulio','9086-1955','093929-9','149.029.198-88','tuliomarco@gmail.com',10,10);
 -- --------------------------------------------------------
 
 --
