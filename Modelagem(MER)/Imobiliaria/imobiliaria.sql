@@ -200,7 +200,10 @@ CREATE TABLE `inquilino` (
   `id_fiador` int(11) DEFAULT NULL,
   `id_corretor` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
+--
+-- Extraindo dados da tabela `inquilino`
+--
+Insert into `inquilino`
 -- --------------------------------------------------------
 
 --
