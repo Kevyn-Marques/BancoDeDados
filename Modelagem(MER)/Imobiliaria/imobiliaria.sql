@@ -32,7 +32,7 @@ USE `imobiliaria`;
 CREATE TABLE `contrato` (
   `id_contrato` int(11) NOT NULL,
   `preco_m` decimal(10,2) DEFAULT NULL,
-  `vencimento` date DEFAULT NULL,
+  `vencimento` int(2) DEFAULT NULL,
   `data_inic` date DEFAULT NULL,
   `data_fim` date DEFAULT NULL,
   `condicoes` varchar(55) DEFAULT NULL,
@@ -41,7 +41,20 @@ CREATE TABLE `contrato` (
   `id_corretor` int(11) DEFAULT NULL,
   `id_inquilino` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
+--
+-- Extraindo dados da tabela `contrato`
+--
+insert into `contrato` (`id_contrato`,`preco_m`,`data_inic`,`data_fim`,`condicoes`,`descricao`,`id_imovel`,`id_corretor`,`id_inquilino`) values
+  (1,750.00,'20','2024-02-02','2025-05-06','pagamento via pix',' ',1,1,1),
+  (2,1000.00,'15','2024-03-02','2025-07-06','somente dinheiro',' ',2,2,2),
+  (3,2500.00,'10','2024-12-07','2025-03-02','debito automático',' ',3,3,3),
+  (4,3750.00,'05','2024-11-09','2025-11-11','pagamento a quinzena',' ',4,4,4),
+  (5,5000.00,'15','2024-02-01','2025-12-06','pagamento via crédito',' ',5,5,5),
+  (6,950.00,'25','2024-05-02','2025-08-11','não aceitamos cartão',' ',6,6,6),
+  (7,4050.00,'30','2024-10-10','2025-09-09','só aceitamos cartão',' ',7,7,7),
+  (8,2974.00,'17','2024-07-09','2025-02-12','pagamento via pix',' ',8,8,8),
+  (9,1100.00,'03','2024-05-03','2025-05-07','pagar direto com o proprietário',' ',9,9,9),
+  (10,3760.00,'04','2024-03-12','2025-05-08','pagamento via boleto',' ',10,10,10);
 -- --------------------------------------------------------
 
 --
