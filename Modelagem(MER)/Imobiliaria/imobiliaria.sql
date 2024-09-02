@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26-Ago-2024 às 13:45
+-- Tempo de geração: 02-Set-2024 às 14:06
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.0.25
 
@@ -41,20 +41,23 @@ CREATE TABLE `contrato` (
   `id_corretor` int(11) DEFAULT NULL,
   `id_inquilino` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
 --
 -- Extraindo dados da tabela `contrato`
 --
-insert into `contrato` (`id_contrato`,`preco_m`,`data_inic`,`data_fim`,`condicoes`,`descricao`,`id_imovel`,`id_corretor`,`id_inquilino`) values
-  (1,750.00,'20','2024-02-02','2025-05-06','pagamento via pix',' ',1,1,1),
-  (2,1000.00,'15','2024-03-02','2025-07-06','somente dinheiro',' ',2,2,2),
-  (3,2500.00,'10','2024-12-07','2025-03-02','debito automático',' ',3,3,3),
-  (4,3750.00,'05','2024-11-09','2025-11-11','pagamento a quinzena',' ',4,4,4),
-  (5,5000.00,'15','2024-02-01','2025-12-06','pagamento via crédito',' ',5,5,5),
-  (6,950.00,'25','2024-05-02','2025-08-11','não aceitamos cartão',' ',6,6,6),
-  (7,4050.00,'30','2024-10-10','2025-09-09','só aceitamos cartão',' ',7,7,7),
-  (8,2974.00,'17','2024-07-09','2025-02-12','pagamento via pix',' ',8,8,8),
-  (9,1100.00,'03','2024-05-03','2025-05-07','pagar direto com o proprietário',' ',9,9,9),
-  (10,3760.00,'04','2024-03-12','2025-05-08','pagamento via boleto',' ',10,10,10);
+
+INSERT INTO `contrato` (`id_contrato`, `preco_m`, `vencimento`, `data_inic`, `data_fim`, `condicoes`, `descricao`, `id_imovel`, `id_corretor`, `id_inquilino`) VALUES
+(1, '750.00', 20, '2024-02-02', '2025-05-06', 'pagamento via pix', ' ', 1, 1, 1),
+(2, '1000.00', 15, '2024-03-02', '2025-07-06', 'somente dinheiro', ' ', 2, 2, 2),
+(3, '2500.00', 10, '2024-12-07', '2025-03-02', 'debito automático', ' ', 3, 3, 3),
+(4, '3750.00', 5, '2024-11-09', '2025-11-11', 'pagamento a quinzena', ' ', 4, 4, 4),
+(5, '5000.00', 15, '2024-02-01', '2025-12-06', 'pagamento via crédito', ' ', 5, 5, 5),
+(6, '950.00', 25, '2024-05-02', '2025-08-11', 'não aceitamos cartão', ' ', 6, 6, 6),
+(7, '4050.00', 30, '2024-10-10', '2025-09-09', 'só aceitamos cartão', ' ', 7, 7, 7),
+(8, '2974.00', 17, '2024-07-09', '2025-02-12', 'pagamento via pix', ' ', 8, 8, 8),
+(9, '1100.00', 3, '2024-05-03', '2025-05-07', 'pagar direto com o proprietário', ' ', 9, 9, 9),
+(10, '3760.00', 4, '2024-03-12', '2025-05-08', 'pagamento via boleto', ' ', 10, 10, 10);
+
 -- --------------------------------------------------------
 
 --
@@ -72,20 +75,23 @@ CREATE TABLE `corretor` (
   `nome` varchar(255) DEFAULT NULL,
   `id_endereco` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
 --
---Extraindo Dados da Tabela `corretor`
+-- Extraindo dados da tabela `corretor`
 --
-Insert Into `corretor` (`id_corretor`,`cpf`,`data_nasc`,`imobiliaria`,`rg`,`email`,`telefone`,`nome`,`id_endereco`) Values
-(1, '123.456.789-01', '1999-05-05', 'Casas Arnaldo', '09739-7', 'ruan@gmail.com','3333-0505','Ruan Aroldo', 1),
-(2, '234.111.444-99', '1577-12-12', 'Loteamento Vicente&filhos', '1111-1', 'tabata@gmail.com','1234-7777','Tabata Sanchez',2),
-(3, '777.777.777-77', '2000-05-02', 'Anapurna Imóveis', '99787-71', 'aluisio@gmail.com','4546-7777','Aluisio', 3),
-(4, '181.190.673-42', '1987-05-08', 'AutoImoveis', '70000-1', 'volkswagen@gmail.com','2783-7878','Clovis', 4),
-(5, '111.111.111-11', '1890-09-02', 'Imobiliaria Fachada', '79272-2', 'thomas@gmail.com','9999-8888','Thomas Carvalho', 5),
-(6, '987.654.321-00', '1980-07-06', 'Faminto Móveis', '384728-2', 'andersin@gmail.com','4626-7383','Anderson', 6),
-(7, '555.555.555-70', '1999-01-01', 'Imobilicimos', '204838-2', 'lulaby@gmail.com','6373-7288','Umberto', 7),
-(8, '999.888.777-66', '1800-08-08', 'Imóveis e Lanches', '038493-7', 'sinners@yahoo.com','2728-999','Joel', 8),
-(9, '111.222.333-44', '2006-07-07', 'Claudio Apartamentos', '2847283-2', 'colunga@gmail.com','5555-6666','Fernando Colunga',9),
-(10, '444.555.666-77', '2003-05-05', 'Cazemiro Imobiliária ', '928383-3', 'vasconselhos@gmail.com','8888-1111','Tamirez Vasconselos',10);
+
+INSERT INTO `corretor` (`id_corretor`, `cpf`, `data_nasc`, `imobiliaria`, `rg`, `email`, `telefone`, `nome`, `id_endereco`) VALUES
+(1, '123.456.789-01', '1999-05-05', 'Casas Arnaldo', '09739-7', 'ruan@gmail.com', '3333-0505', 'Ruan Aroldo', 1),
+(2, '234.111.444-99', '1577-12-12', 'Loteamento Vicente&filhos', '1111-1', 'tabata@gmail.com', '1234-7777', 'Tabata Sanchez', 2),
+(3, '777.777.777-77', '2000-05-02', 'Anapurna Imóveis', '99787-71', 'aluisio@gmail.com', '4546-7777', 'Aluisio', 3),
+(4, '181.190.673-42', '1987-05-08', 'AutoImoveis', '70000-1', 'volkswagen@gmail.com', '2783-7878', 'Clovis', 4),
+(5, '111.111.111-11', '1890-09-02', 'Imobiliaria Fachada', '79272-2', 'thomas@gmail.com', '9999-8888', 'Thomas Carvalho', 5),
+(6, '987.654.321-00', '1980-07-06', 'Faminto Móveis', '384728-2', 'andersin@gmail.com', '4626-7383', 'Anderson', 6),
+(7, '555.555.555-70', '1999-01-01', 'Imobilicimos', '204838-2', 'lulaby@gmail.com', '6373-7288', 'Umberto', 7),
+(8, '999.888.777-66', '1800-08-08', 'Imóveis e Lanches', '038493-7', 'sinners@yahoo.com', '2728-999', 'Joel', 8),
+(9, '111.222.333-44', '2006-07-07', 'Claudio Apartamentos', '2847283-2', 'colunga@gmail.com', '5555-6666', 'Fernando Colunga', 9),
+(10, '444.555.666-77', '2003-05-05', 'Cazemiro Imobiliária ', '928383-3', 'vasconselhos@gmail.com', '8888-1111', 'Tamirez Vasconselos', 10);
+
 -- --------------------------------------------------------
 
 --
@@ -181,22 +187,26 @@ CREATE TABLE `imovel` (
   `piscina` bit(1) DEFAULT NULL,
   `alugado` bit(1) DEFAULT NULL,
   `id_proprietario` int(11) DEFAULT NULL,
-  `id_endereco` int(11) DEFAULT NULL
+  `id_endereco` int(11) DEFAULT NULL,
+  `lavanderia` bit(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
 --
 -- Extraindo dados da tabela `imovel`
 --
-Insert into `imovel` (`id_imovel`,`quartos`,`tamanho_m2`,`comodos`,`quintal`,`banheiros`,`andares`,`garagem`,`piscina`,`alugado`,`id_proprietario`,`id_endereco`) Values
-  (1,2,42,5,1,2,2,b'1',b'0',b'0',1,2),
-  (2,3,50,2,1,3,2,b'0',b'0',b'0',2,3),
-  (3,4,64,4,1,4,2,b'1',b'0',b'0',3,1),
-  (4,1,30,3,1,1,1,b'1',b'0',b'0',4,4),
-  (5,4,60,6,1,4,2,b'0',b'0',b'0',5,5),
-  (6,5,72,3,2,5,2,b'1',b'1',b'0',6,6),
-  (7,3,53,8,1,3,2,b'1',b'0',b'0',7,7),
-  (8,2,39,2,1,2,1,b'0',b'0',b'0',8,8),
-  (9,4,56,4,1,4,2,b'1',b'0',b'0',9,9),
-  (10,2,45,7,1,1,2,b'1',b'0',b'0',10,10);
+
+INSERT INTO `imovel` (`id_imovel`, `quartos`, `tamanho_m2`, `comodos`, `quintal`, `banheiros`, `andares`, `garagem`, `piscina`, `alugado`, `id_proprietario`, `id_endereco`, `lavanderia`) VALUES
+(1, 4, 42, 5, 1, 1, 2, b'1', b'0', b'0', 1, 2, b'1'),
+(2, 6, 50, 2, 1, 2, 2, b'1', b'0', b'0', 2, 3, b'1'),
+(3, 4, 64, 4, 1, 1, 2, b'0', b'0', b'0', 3, 1, b'1'),
+(4, 5, 30, 3, 1, 1, 1, b'0', b'0', b'0', 4, 4, b'1'),
+(5, 4, 60, 6, 1, 2, 2, b'1', b'0', b'0', 5, 5, b'0'),
+(6, 5, 72, 3, 2, 5, 2, b'1', b'1', b'0', 6, 6, NULL),
+(7, 3, 53, 8, 1, 3, 2, b'1', b'0', b'0', 7, 7, NULL),
+(8, 2, 39, 2, 1, 2, 1, b'0', b'0', b'0', 8, 8, NULL),
+(9, 4, 56, 4, 1, 4, 2, b'1', b'0', b'0', 9, 9, NULL),
+(10, 2, 45, 7, 1, 1, 2, b'1', b'0', b'0', 10, 10, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -211,22 +221,27 @@ CREATE TABLE `inquilino` (
   `cpf` varchar(55) NOT NULL,
   `email` varchar(255) NOT NULL,
   `id_fiador` int(11) DEFAULT NULL,
-  `id_corretor` int(11) DEFAULT NULL
+  `id_corretor` int(11) DEFAULT NULL,
+  `salario` decimal(7,2) NOT NULL,
+  `dataNasc` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
 --
 -- Extraindo dados da tabela `inquilino`
 --
-Insert into `inquilino` (`id_inquilino`,`nome`,`telefone`,`rg`,`cpf`,`email`,`id_fiador`,`id_corretor`) values
-  (1,'Leandro Paiva','9786-9955','72489-9','512.789.001-36','leandrissimo@gmail.com',1,1),
-  (2,'Mauro','9945-9355','79389-9','103.559.501-56','mauro@gmail.com',2,2),
-  (3,'Vladimir','9786-9965','284889-6','112.098.001-70','vlad@gmail.com',3,3),
-  (4,'Cocielo','9786-6755','3874-9','109.111.001-76','julio@gmail.com',4,4),
-  (5,'Pedro','9786-9911','10399-0','209.779.183-39','pedrin@gmail.com',5,5),
-  (6,'Taylor Swift','1786-9055','9999-9','109.672.111-16','swifter@gmail.com',6,6),
-  (7,'Terencio','1286-9015','124949-3','189.478.384-96','terents@gmail.com',7,7),
-  (8,'Laura','8386-9785','72048-5','108.294.001-06','laurinha@gmail.com',8,8),
-  (9,'Agustinho Carrara','9716-1955','124020-0','538.297.201-00','grandefamilis@gmail.com',9,9),
-  (10,'Marco Tulio','9086-1955','093929-9','149.029.198-88','tuliomarco@gmail.com',10,10);
+
+INSERT INTO `inquilino` (`id_inquilino`, `nome`, `telefone`, `rg`, `cpf`, `email`, `id_fiador`, `id_corretor`, `salario`, `dataNasc`) VALUES
+(1, 'Leandro Paiva', '9786-9955', '72489-9', '512.789.001-36', 'leandrissimo@gmail.com', 1, 1, '2500.00', '1981-12-21'),
+(2, 'Mauro', '9945-9355', '79389-9', '103.559.501-56', 'mauro@gmail.com', 2, 2, '0.00', '1974-02-14'),
+(3, 'Vladimir', '9786-9965', '284889-6', '112.098.001-70', 'vlad@gmail.com', 3, 3, '4000.00', '1960-06-02'),
+(4, 'Cocielo', '9786-6755', '3874-9', '109.111.001-76', 'julio@gmail.com', 4, 4, '0.00', NULL),
+(5, 'Pedro', '9786-9911', '10399-0', '209.779.183-39', 'pedrin@gmail.com', 5, 5, '0.00', NULL),
+(6, 'Taylor Swift', '1786-9055', '9999-9', '109.672.111-16', 'swifter@gmail.com', 6, 6, '0.00', NULL),
+(7, 'Terencio', '1286-9015', '124949-3', '189.478.384-96', 'terents@gmail.com', 7, 7, '0.00', NULL),
+(8, 'Laura', '8386-9785', '72048-5', '108.294.001-06', 'laurinha@gmail.com', 8, 8, '0.00', NULL),
+(9, 'Agustinho Carrara', '9716-1955', '124020-0', '538.297.201-00', 'grandefamilis@gmail.com', 9, 9, '0.00', NULL),
+(10, 'Marco Tulio', '9086-1955', '093929-9', '149.029.198-88', 'tuliomarco@gmail.com', 10, 10, '0.00', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -249,16 +264,16 @@ CREATE TABLE `proprietario` (
 --
 
 INSERT INTO `proprietario` (`id_proprietario`, `cpf`, `telefone`, `nome`, `data_nasc`, `email`, `rg`, `id_endereco`) VALUES
-(1, '123.456.789-00', '(11) 98765-4321', 'Ana Silva', '1985-03-05', 'ana.silva@example.com', '12.345.678-9', 1),
-(2, '234.567.890-11', '(21) 97654-3210', ' João Santos', '1997-11-01', ' joao.santos@example.com', '23.456.789-0', 2),
-(3, '345.678.901-22', '(31) 96543-2109', ' Maria Oliveira', '2000-05-02', 'maria.oliveira@example.com', '34.567.890-1', 3),
-(4, '187.354.923-11', '99876-8787', 'Roberto Variados', '2005-07-02', 'robertovarios@gmail.com', '090828-9', 4),
-(5, '117.886.4563-12', '99856-6787', 'Renato Aragão', '1995-05-02', 'aragao@gmail.com', '093332-1', 5),
-(6, '237.676.773-13', '99567-1287', 'Claudio Preres Araújo', '1987-12-12', 'claaaaudio@gmail.com', '090828-5', 6),
-(7, '345.346.563-14', '97776-5687', 'Luan Varins', '2000-01-01', 'luansin@gmail.com', '01243-6', 7),
-(8, '675.376.903-15', '98236-5587', 'Drauzio Varela', '2003-03-02', 'varela@gmail.com', '563767-3', 8),
-(9, '995.976.563-16', '91116-3787', 'Orácio Sonidos', '2006-11-02', 'oracio@gmail.com', '034647-2', 9),
-(10, '457.856.231-17', '93456-1287', 'Césio Toxin', '2001-11-11', 'cesio137@gmail.com', '123456-0', 10);
+(1, '123.456.789-00', '11(11) 98765-4321', 'Ana Silva', '1985-03-05', 'ana.silva@example.com', '12.345.678-9', 1),
+(2, '234.567.890-11', '11(21) 97654-3210', ' João Santos', '1997-11-01', ' joao.santos@example.com', '23.456.789-0', 2),
+(3, '345.678.901-22', '11(31) 96543-2109', ' Maria Oliveira', '2000-05-02', 'maria.oliveira@example.com', '34.567.890-1', 3),
+(4, '187.354.923-11', '1199876-8787', 'Roberto Variados', '2005-07-02', 'robertovarios@gmail.com', '090828-9', 4),
+(5, '117.886.4563-12', '1199856-6787', 'Renato Aragão', '1995-05-02', 'aragao@gmail.com', '093332-1', 5),
+(6, '237.676.773-13', '1199567-1287', 'Claudio Preres Araújo', '1987-12-12', 'claaaaudio@gmail.com', '090828-5', 6),
+(7, '345.346.563-14', '1197776-5687', 'Luan Varins', '2000-01-01', 'luansin@gmail.com', '01243-6', 7),
+(8, '675.376.903-15', '1198236-5587', 'Drauzio Varela', '2003-03-02', 'varela@gmail.com', '563767-3', 8),
+(9, '995.976.563-16', '1191116-3787', 'Orácio Sonidos', '2006-11-02', 'oracio@gmail.com', '034647-2', 9),
+(10, '457.856.231-17', '1193456-1287', 'Césio Toxin', '2001-11-11', 'cesio137@gmail.com', '123456-0', 10);
 
 --
 -- Índices para tabelas despejadas
@@ -339,13 +354,13 @@ ALTER TABLE `proprietario`
 -- AUTO_INCREMENT de tabela `contrato`
 --
 ALTER TABLE `contrato`
-  MODIFY `id_contrato` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_contrato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `corretor`
 --
 ALTER TABLE `corretor`
-  MODIFY `id_corretor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_corretor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `endreco`
@@ -363,13 +378,13 @@ ALTER TABLE `fiador`
 -- AUTO_INCREMENT de tabela `imovel`
 --
 ALTER TABLE `imovel`
-  MODIFY `id_imovel` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_imovel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `inquilino`
 --
 ALTER TABLE `inquilino`
-  MODIFY `id_inquilino` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_inquilino` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `proprietario`
