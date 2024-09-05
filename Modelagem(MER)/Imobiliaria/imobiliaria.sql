@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Set-2024 às 14:06
+-- Tempo de geração: 05-Set-2024 às 16:45
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.0.25
 
@@ -84,7 +84,7 @@ INSERT INTO `corretor` (`id_corretor`, `cpf`, `data_nasc`, `imobiliaria`, `rg`, 
 (1, '123.456.789-01', '1999-05-05', 'Casas Arnaldo', '09739-7', 'ruan@gmail.com', '3333-0505', 'Ruan Aroldo', 1),
 (2, '234.111.444-99', '1577-12-12', 'Loteamento Vicente&filhos', '1111-1', 'tabata@gmail.com', '1234-7777', 'Tabata Sanchez', 2),
 (3, '777.777.777-77', '2000-05-02', 'Anapurna Imóveis', '99787-71', 'aluisio@gmail.com', '4546-7777', 'Aluisio', 3),
-(4, '181.190.673-42', '1987-05-08', 'AutoImoveis', '70000-1', 'volkswagen@gmail.com', '2783-7878', 'Clovis', 4),
+(4, '181.190.673-42', '1987-05-08', 'AutoImoveis', '70000-1', 'carmo.araujo@gmail.com', '2783-7878', 'Clovis', 4),
 (5, '111.111.111-11', '1890-09-02', 'Imobiliaria Fachada', '79272-2', 'thomas@gmail.com', '9999-8888', 'Thomas Carvalho', 5),
 (6, '987.654.321-00', '1980-07-06', 'Faminto Móveis', '384728-2', 'andersin@gmail.com', '4626-7383', 'Anderson', 6),
 (7, '555.555.555-70', '1999-01-01', 'Imobilicimos', '204838-2', 'lulaby@gmail.com', '6373-7288', 'Umberto', 7),
@@ -188,24 +188,26 @@ CREATE TABLE `imovel` (
   `alugado` bit(1) DEFAULT NULL,
   `id_proprietario` int(11) DEFAULT NULL,
   `id_endereco` int(11) DEFAULT NULL,
-  `lavanderia` bit(1) DEFAULT NULL
+  `lavanderia` bit(1) DEFAULT NULL,
+  `valor` decimal(7,2) DEFAULT NULL,
+  `cidade` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Extraindo dados da tabela `imovel`
 --
 
-INSERT INTO `imovel` (`id_imovel`, `quartos`, `tamanho_m2`, `comodos`, `quintal`, `banheiros`, `andares`, `garagem`, `piscina`, `alugado`, `id_proprietario`, `id_endereco`, `lavanderia`) VALUES
-(1, 4, 42, 5, 1, 1, 2, b'1', b'0', b'0', 1, 2, b'1'),
-(2, 6, 50, 2, 1, 2, 2, b'1', b'0', b'0', 2, 3, b'1'),
-(3, 4, 64, 4, 1, 1, 2, b'0', b'0', b'0', 3, 1, b'1'),
-(4, 5, 30, 3, 1, 1, 1, b'0', b'0', b'0', 4, 4, b'1'),
-(5, 4, 60, 6, 1, 2, 2, b'1', b'0', b'0', 5, 5, b'0'),
-(6, 5, 72, 3, 2, 5, 2, b'1', b'1', b'0', 6, 6, NULL),
-(7, 3, 53, 8, 1, 3, 2, b'1', b'0', b'0', 7, 7, NULL),
-(8, 2, 39, 2, 1, 2, 1, b'0', b'0', b'0', 8, 8, NULL),
-(9, 4, 56, 4, 1, 4, 2, b'1', b'0', b'0', 9, 9, NULL),
-(10, 2, 45, 7, 1, 1, 2, b'1', b'0', b'0', 10, 10, NULL);
+INSERT INTO `imovel` (`id_imovel`, `quartos`, `tamanho_m2`, `comodos`, `quintal`, `banheiros`, `andares`, `garagem`, `piscina`, `alugado`, `id_proprietario`, `id_endereco`, `lavanderia`, `valor`, `cidade`) VALUES
+(1, 4, 42, 5, 1, 1, 2, b'1', b'0', b'0', 1, 2, b'1', '11900.00', 'Capuava'),
+(2, 6, 50, 2, 1, 2, 2, b'1', b'0', b'0', 2, 3, b'1', '2550.00', 'Máua'),
+(3, 4, 64, 4, 1, 1, 2, b'0', b'0', b'0', 3, 1, b'1', '1666.00', 'Capo City'),
+(4, 5, 30, 3, 1, 1, 1, b'0', b'0', b'0', 4, 4, b'1', '1700.00', 'Hollywood'),
+(5, 4, 60, 6, 1, 2, 2, b'1', b'0', b'0', 5, 5, b'0', '8500.00', 'Ribeirão Preto'),
+(6, 5, 72, 3, 2, 5, 2, b'1', b'1', b'0', 6, 6, NULL, '79900.00', 'Itaquaquecetuba'),
+(7, 3, 53, 8, 1, 3, 2, b'1', b'0', b'0', 7, 7, NULL, '28900.00', 'Máua'),
+(8, 2, 39, 2, 1, 2, 1, b'0', b'0', b'0', 8, 8, NULL, '15300.00', 'Santo André'),
+(9, 4, 56, 4, 1, 4, 2, b'1', b'0', b'0', 9, 9, NULL, '13600.00', 'Guapituba'),
+(10, 2, 45, 7, 1, 1, 2, b'1', b'0', b'0', 10, 10, NULL, '12750.00', 'Intahaém');
 
 -- --------------------------------------------------------
 
