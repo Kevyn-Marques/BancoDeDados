@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Set-2024 às 13:07
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.0.25
+-- Tempo de geração: 30-Set-2024 às 17:41
+-- Versão do servidor: 10.4.22-MariaDB
+-- versão do PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `andar` (
   `id_andar` int(11) NOT NULL,
   `capacidade` int(11) DEFAULT NULL,
   `andar` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `andar`
@@ -71,7 +71,7 @@ CREATE TABLE `cliente` (
   `cpf` varchar(255) NOT NULL,
   `dataNasc` datetime DEFAULT NULL,
   `nome` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `cliente`
@@ -113,7 +113,7 @@ CREATE TABLE `estaciona` (
   `dtEntrada` datetime DEFAULT NULL,
   `placa` varchar(7) DEFAULT NULL,
   `id_andar` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `estaciona`
@@ -149,7 +149,7 @@ CREATE TABLE `modelo` (
   `id_modelo` int(11) NOT NULL,
   `modelo` varchar(255) DEFAULT NULL,
   `ano` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `modelo`
@@ -208,7 +208,7 @@ CREATE TABLE `veiculo` (
   `cor` varchar(20) DEFAULT NULL,
   `cpf` varchar(255) DEFAULT NULL,
   `id_modelo` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `veiculo`
