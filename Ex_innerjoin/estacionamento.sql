@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Set-2024 às 13:28
--- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.1.2
+-- Tempo de geração: 30-Set-2024 às 13:07
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `andar` (
   `id_andar` int(11) NOT NULL,
   `capacidade` int(11) DEFAULT NULL,
   `andar` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Extraindo dados da tabela `andar`
@@ -71,7 +71,7 @@ CREATE TABLE `cliente` (
   `cpf` varchar(255) NOT NULL,
   `dataNasc` datetime DEFAULT NULL,
   `nome` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Extraindo dados da tabela `cliente`
@@ -113,7 +113,7 @@ CREATE TABLE `estaciona` (
   `dtEntrada` datetime DEFAULT NULL,
   `placa` varchar(7) DEFAULT NULL,
   `id_andar` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Extraindo dados da tabela `estaciona`
@@ -147,34 +147,55 @@ INSERT INTO `estaciona` (`id_estaciona`, `horSaida`, `horEntrada`, `dtSaida`, `d
 
 CREATE TABLE `modelo` (
   `id_modelo` int(11) NOT NULL,
-  `modelo` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `modelo` varchar(255) DEFAULT NULL,
+  `ano` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Extraindo dados da tabela `modelo`
 --
 
-INSERT INTO `modelo` (`id_modelo`, `modelo`) VALUES
-(1, 'Fusca'),
-(2, 'Civic'),
-(3, 'Corolla'),
-(4, 'Onix'),
-(5, 'Hilux'),
-(6, 'Astra'),
-(7, 'Gol'),
-(8, 'Celta'),
-(9, 'S10'),
-(10, 'Fox'),
-(11, 'Kwid'),
-(12, 'Jetta'),
-(13, 'Renegade'),
-(14, 'Tucson'),
-(15, 'HR-V'),
-(16, 'X-Trail'),
-(17, 'EcoSport'),
-(18, 'Tracker'),
-(19, 'Compass'),
-(20, 'Mustang');
+INSERT INTO `modelo` (`id_modelo`, `modelo`, `ano`) VALUES
+(1, 'Fusca', NULL),
+(2, 'Civic', NULL),
+(3, 'Corolla', NULL),
+(4, 'Onix', NULL),
+(5, 'Hilux', NULL),
+(6, 'Astra', NULL),
+(7, 'Gol', NULL),
+(8, 'Celta', NULL),
+(9, 'S10', NULL),
+(10, 'Fox', NULL),
+(11, 'Kwid', NULL),
+(12, 'Jetta', NULL),
+(13, 'Renegade', NULL),
+(14, 'Tucson', NULL),
+(15, 'HR-V', NULL),
+(16, 'X-Trail', NULL),
+(17, 'EcoSport', NULL),
+(18, 'Tracker', NULL),
+(19, 'Compass', NULL),
+(20, 'Mustang', NULL),
+(21, NULL, '2000-01-01'),
+(22, NULL, '2001-01-01'),
+(23, NULL, '2002-01-01'),
+(24, NULL, '2003-01-01'),
+(25, NULL, '2004-01-01'),
+(26, NULL, '2005-01-01'),
+(27, NULL, '2006-01-01'),
+(28, NULL, '2007-01-01'),
+(29, NULL, '2008-01-01'),
+(30, NULL, '2009-01-01'),
+(31, NULL, '2010-01-01'),
+(32, NULL, '2011-01-01'),
+(33, NULL, '2012-01-01'),
+(34, NULL, '2013-01-01'),
+(35, NULL, '2014-01-01'),
+(36, NULL, '2015-01-01'),
+(37, NULL, '2016-01-01'),
+(38, NULL, '2017-01-01'),
+(39, NULL, '2018-01-01'),
+(40, NULL, '2019-01-01');
 
 -- --------------------------------------------------------
 
@@ -187,7 +208,7 @@ CREATE TABLE `veiculo` (
   `cor` varchar(20) DEFAULT NULL,
   `cpf` varchar(255) DEFAULT NULL,
   `id_modelo` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Extraindo dados da tabela `veiculo`
@@ -272,7 +293,7 @@ ALTER TABLE `estaciona`
 -- AUTO_INCREMENT de tabela `modelo`
 --
 ALTER TABLE `modelo`
-  MODIFY `id_modelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_modelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- Restrições para despejos de tabelas
